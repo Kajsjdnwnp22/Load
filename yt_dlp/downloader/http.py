@@ -125,9 +125,9 @@ class HttpFD(FileDownloader):
             #if has_range:
               #  request.add_header('Range', f'bytes={int(range_start)}-{int_or_none(range_end) or ""}')
             # Establish connection
-            try: 
-                total_length = int_or_none(self.ydl.urlopen(sanitized_Request(url, request_data, headers)).headers.get('Content-Length'))
-                 ctx.data = self.ydl.urlopen(request)
+            try:
+                total_length = int_or_none(self.ydl.urlopen(sanitized_Request(url, request_data, headers)).headers.get('Content-Length'))     
+                ctx.data = self.ydl.urlopen(request)
                 # When trying to resume, Content-Range HTTP header of response has to be checked
                 # to match the value of requested Range HTTP header. This is due to a webservers
                 # that don't support resuming and serve a whole file with no Content-Range
